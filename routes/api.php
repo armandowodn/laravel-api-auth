@@ -49,7 +49,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         ;
     });
     
-    Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::group(['middleware' => ['auth:sanctum','user-auth']], function() {
         /*admin*/
         Route::group(['prefix' => 'a','middleware' => 'role:admin'], function () {
             Route::group(['prefix' => 'role-master'], function () {
